@@ -26,21 +26,21 @@ public class WelcomePage implements ActionListener {
         welcomeSubtitle.setFont(new Font(null , Font.PLAIN, 18));
 
         //                         125
-        teachersButton.setBounds(20 , 130 , 130 , 55);
+        teachersButton.setBounds(20 , 100 , 130 , 55);
         teachersButton.setFocusable(false);
         teachersButton.addActionListener(this);
 
-        goodsButton.setBounds(170, 130 , 130 , 55);
-        goodsButton.setFocusable(false);
-        goodsButton.addActionListener(this);
-
-        studentsButton.setBounds(320 , 130 , 130 , 55);
+        studentsButton.setBounds(170 , 100 , 130 , 55);
         studentsButton.setFocusable(false);
         studentsButton.addActionListener(this);
 
-        classesButton.setBounds(470 , 130 , 130 , 55);
+        classesButton.setBounds(320 , 100 , 130 , 55);
         classesButton.setFocusable(false);
         classesButton.addActionListener(this);
+
+        goodsButton.setBounds(470, 100 , 130 , 55);
+        goodsButton.setFocusable(false);
+        goodsButton.addActionListener(this);        
 
         frame.add(teachersButton);
         frame.add(goodsButton);
@@ -49,7 +49,7 @@ public class WelcomePage implements ActionListener {
         frame.add(welcomeSubtitle);
         frame.add(welcomeTitle);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(645 , 300);
+        frame.setSize(645 , 220);
         frame.setLayout(null);
         frame.setVisible(true);
 
@@ -58,6 +58,7 @@ public class WelcomePage implements ActionListener {
     @Override
     
     public void actionPerformed(ActionEvent e){
+
         if(e.getSource() == teachersButton){
             TeachersPage teachersPage = new TeachersPage();
             frame.dispose();

@@ -8,21 +8,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class StudentsPage implements ActionListener  {
-    JLabel studensTitle = new JLabel("Pagina dos Alunos.");
+    JLabel pageTitle = new JLabel("ALUNOS");
+    JLabel pageSubtitle = new JLabel("Gerencie todos os alunos da EJF");
     JButton comebackButton = new JButton("Voltar");
     JFrame frame = new JFrame();
 
     public StudentsPage(){
 
-        studensTitle.setBounds(20,20,600,35);
-        studensTitle.setFont(new Font(null , Font.BOLD, 25));;
+        pageTitle.setBounds(20,20,600,35);
+        pageTitle.setFont(new Font(null , Font.BOLD, 30));
+
+        pageSubtitle.setBounds(20,50,600, 35);
+        pageSubtitle.setFont(new Font(null, Font.PLAIN, 18 ));
         
         comebackButton.setBounds(860,620,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);
 
         frame.add(comebackButton);
-        frame.add(studensTitle);
+        frame.add(pageTitle);
+        frame.add(pageSubtitle);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000 , 700);
         frame.setLayout(null);
