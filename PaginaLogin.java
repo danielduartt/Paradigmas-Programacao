@@ -92,6 +92,7 @@ public class PaginaLogin implements ActionListener{
                     popup.setVisible(true); 
 
                     WelcomePage welcomePage = new WelcomePage();
+                    frame.dispose();
 
                 }
 
