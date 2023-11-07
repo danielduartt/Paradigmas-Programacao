@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -52,6 +53,8 @@ public class TeachersPage implements ActionListener {
         deleteTeacher.setBounds(400, 344 , 300 , 40);
         deleteTeacher.setFocusable(false);
         deleteTeacher.addActionListener(this);
+        deleteTeacher.setBackground(new Color(255, 180, 180));
+
     
         comebackButton.setBounds(600,400,100,25);
         comebackButton.setFocusable(false);
@@ -94,6 +97,11 @@ public class TeachersPage implements ActionListener {
         if(e.getSource() == comebackButton){
             WelcomePage welcomePage = new WelcomePage();
             frame.dispose();
+        }
+
+        if(e.getSource() == teacherInformations){
+            TeachersInformation teachersInformation = new TeachersInformation();
+            teachersInformation.setVisible(true);
         }
     }
 
