@@ -25,6 +25,8 @@ public class StudentsPage implements ActionListener  {
     JButton deleteStudent = new JButton("Deletar aluno");
     JButton addStudent = new JButton("Adicionar novo aluno");
     JButton comebackButton = new JButton("Voltar");
+    JPanel studentsContainer = new JPanel(); 
+    JScrollPane scrollTeahcerContainer = new JScrollPane(studentsContainer);
     JFrame frame = new JFrame();
 
     public StudentsPage(){
@@ -58,7 +60,7 @@ public class StudentsPage implements ActionListener  {
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);
 
-        /*studentsContainer.setLayout(new BoxLayout(studentsContainer, BoxLayout.Y_AXIS));
+        studentsContainer.setLayout(new BoxLayout(studentsContainer, BoxLayout.Y_AXIS));
 
         scrollTeahcerContainer.setBounds(20 , 135 , 310 , 250);
 
@@ -74,7 +76,7 @@ public class StudentsPage implements ActionListener  {
 
         //-----------------------------------------
 
-        frame.add(ScrollTeahcerContainer, BorderLayout.CENTER);*/
+        frame.add(scrollTeahcerContainer, BorderLayout.CENTER);
         frame.add(comebackButton);
         frame.add(StudentsInformation);
         frame.add(addStudent);
