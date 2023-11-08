@@ -24,7 +24,7 @@ public class GoodsNew  extends JFrame  {
     JTextField typeField = new JTextField("Alimento / Uniforme");
     JTextField valueField = new JTextField("2040");
     JFormattedTextField rechargeDateField = new JFormattedTextField(createDateFormat());
-    JTextField quantField = new JTextField("0000.00");
+    JTextField quantField = new JTextField("0");
 
     JButton confirmButtom = new JButton("Adicionar produto");
 

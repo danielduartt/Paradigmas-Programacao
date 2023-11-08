@@ -23,7 +23,7 @@ public class GoodsUpdate extends JFrame {
     JTextField typeField = new JTextField("Alimento / Uniforme");
     JTextField cttField = new JTextField("(00)900000000");
     JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
-    JTextField salField = new JTextField("0000.00");
+    JTextField salField = new JTextField("0");
 
     JButton confirmButtom = new JButton("Confirmar alterações");
 
