@@ -55,7 +55,7 @@ public class StudentsInformation extends JFrame implements ActionListener{
         menContent.setBounds(338,185,300,25);
         menContent.setFont(new Font(null,Font.PLAIN,17));
 
-        classButton.setBounds(18,215,150,45);
+        classButton.setBounds(18,215,548,45);
         classButton.setFocusable(false);
         classButton.addActionListener(this);
 
@@ -76,7 +76,7 @@ public class StudentsInformation extends JFrame implements ActionListener{
 
         add(panel);
         setTitle("Informações dos alunos");
-        setSize(600, 310);
+        setSize(600, 314);
 
     }
 

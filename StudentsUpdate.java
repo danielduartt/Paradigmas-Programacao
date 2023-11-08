@@ -5,12 +5,14 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JFrame;
 
 
 
-public class StudentsUpdate extends JFrame{
+public class StudentsUpdate extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel();
 
@@ -26,6 +28,8 @@ public class StudentsUpdate extends JFrame{
     JTextField cttEMField = new JTextField("(00)900000000");
     JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
     JTextField menField = new JTextField("0000.00");
+
+    JButton classButton = new JButton("Turmas"); 
 
     JButton confirmButtom = new JButton("Confirmar alterações");
 
@@ -66,7 +70,11 @@ public class StudentsUpdate extends JFrame{
         menField.setDocument(new JTextFieldLimit(10));
         menField.setText("0000.00");
 
-        confirmButtom.setBounds(370, 225, 200, 25);
+        classButton.setBounds(18,216,552,45);
+        classButton.setFocusable(false);
+        classButton.addActionListener(this);
+
+        confirmButtom.setBounds(370, 270, 200, 25);
         confirmButtom.setFocusable(false);
 
         panel.add(label);
@@ -81,12 +89,14 @@ public class StudentsUpdate extends JFrame{
         panel.add(cttEMField);
         panel.add(nascDateField);
         panel.add(menField);
+
+        panel.add(classButton);
         panel.add(confirmButtom);
         panel.setLayout(null);
 
         add(panel);
         setTitle("Atualizar informações do aluno");
-        setSize(600, 300);
+        setSize(600, 345);
     }
 
     private static MaskFormatter createDateFormat() {
@@ -98,6 +108,11 @@ public class StudentsUpdate extends JFrame{
             e.printStackTrace();
         }
         return dateFormatter;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+
     }
 
 }
