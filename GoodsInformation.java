@@ -3,24 +3,20 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class TeachersInformation extends JFrame {
+public class GoodsInformation extends JFrame  {
+    JPanel panel = new JPanel();
+    JLabel label = new JLabel("INFORMAÇÕES DO PRODUTO");
+    JLabel nameTitle = new JLabel("Nome:");
+    JLabel cttTitle = new JLabel("Valor por unidade:");
+    JLabel nascDateTitle = new JLabel("Recarga de estoque:");
+    JLabel salTitle = new JLabel("Quantidade em estoque:");
 
-JPanel panel = new JPanel();
-JLabel label = new JLabel("INFORMAÇÕES DO PROFESSOR");
-JLabel nameTitle = new JLabel("Nome:");
-JLabel cttTitle = new JLabel("Telefone:");
-JLabel addrTitle = new JLabel("Endereço:");
-JLabel nascDateTitle = new JLabel("Data de nascimento:");
-JLabel salTitle = new JLabel("Salário:");
+    JLabel nameContent = new JLabel("Nome do produto");
+    JLabel cttContent = new JLabel("R$ " + 120.22);
+    JLabel nascDateContent = new JLabel("00/00/0000");
+    JLabel salContent = new JLabel("5");
 
-JLabel nameContent = new JLabel("Nome do Professor");
-JLabel cttContent = new JLabel("(99) 99999-9999");
-JLabel addrContent = new JLabel("Rua teste, 3 , Sao Luis, MA");
-JLabel nascDateContent = new JLabel("00/00/0000");
-JLabel salContent = new JLabel("R$ " + 2034.61);
-
-    public TeachersInformation() {
-
+    public GoodsInformation(){
         label.setBounds(18,15,400,25);
         label.setFont(new Font(null,Font.BOLD,20));
 
@@ -33,11 +29,6 @@ JLabel salContent = new JLabel("R$ " + 2034.61);
         cttTitle.setFont(new Font(null,Font.BOLD,17));
         cttContent.setBounds(338,95,300,25);
         cttContent.setFont(new Font(null,Font.PLAIN,17));
-
-        addrTitle.setBounds(18,125,300,25);
-        addrTitle.setFont(new Font(null,Font.BOLD,17));
-        addrContent.setBounds(338,125,300,25);
-        addrContent.setFont(new Font(null,Font.PLAIN,17));
 
         nascDateTitle.setBounds(18,155,300,25);
         nascDateTitle.setFont(new Font(null,Font.BOLD,17));
@@ -54,8 +45,6 @@ JLabel salContent = new JLabel("R$ " + 2034.61);
         panel.add(nameContent);
         panel.add(cttTitle);
         panel.add(cttContent);
-        panel.add(addrTitle);
-        panel.add(addrContent);
         panel.add(nascDateTitle);
         panel.add(nascDateContent);
         panel.add(salTitle);
@@ -65,6 +54,5 @@ JLabel salContent = new JLabel("R$ " + 2034.61);
         add(panel);
         setTitle("Informações do professor");
         setSize(600, 260);
-
     }
 }

@@ -1,3 +1,4 @@
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,7 +9,7 @@ import java.text.ParseException;
 
 import java.awt.Font;
 
-public class TeachersUpdate extends JFrame  {
+public class TeachersUpdate extends JFrame{
 
     JPanel panel = new JPanel();
 
@@ -24,6 +25,8 @@ public class TeachersUpdate extends JFrame  {
     JTextField addrField = new JTextField("Rua, N, Bairro");
     JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
     JTextField salField = new JTextField("0000.00");
+
+    JButton confirmButtom = new JButton("Confirmar alterações");
 
     public TeachersUpdate(){
         label.setBounds(18,15,600,25);
@@ -63,6 +66,9 @@ public class TeachersUpdate extends JFrame  {
         salField.setDocument(new JTextFieldLimit(10));
         salField.setText("0000.00");
 
+        confirmButtom.setBounds(370,225,200,25);
+        confirmButtom.setFocusable(false);
+
         panel.add(label);
         panel.add(nameTitle);
         panel.add(cttTitle);
@@ -75,11 +81,14 @@ public class TeachersUpdate extends JFrame  {
         panel.add(addrField);
         panel.add(nascDateField);
         panel.add(salField);
+
+        panel.add(confirmButtom);
+
         panel.setLayout(null);
 
         add(panel);
         setTitle("Atualizar informações do professor");
-        setSize(600, 275);
+        setSize(600, 300);
     }
 
     private static MaskFormatter createDateFormat() {
