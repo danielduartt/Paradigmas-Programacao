@@ -116,7 +116,7 @@ public class StudentsPage implements ActionListener  {
             studentsInformation.setVisible(true);
         }
 
-        if(e.getSource() == StudentsInformation){
+        if(e.getSource() == StudentsUpdate){
             StudentsUpdate studentsUpdate = new StudentsUpdate();
             studentsUpdate.setVisible(true);
         }
