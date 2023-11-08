@@ -8,9 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.Font;
-public class StudentsUpdate {
-    public void setVisible(boolean b) {
-    }
+import javax.swing.JFrame;
+
+
+
+public class StudentsUpdate extends JFrame{
+
     JPanel panel = new JPanel();
 
     JLabel label = new JLabel("ATUALIZAR INFORMAÇÕES DO ALUNO");
@@ -20,11 +23,6 @@ public class StudentsUpdate {
     JLabel nascDateTitle = new JLabel("Data de nascimento:");
     JLabel menTitle = new JLabel("Mensalidade:");
 
-    ////////////////////////JLabel nameContent = new JLabel("Nome do Professor");
-    //    JLabel cttContent = new JLabel("(99) 99999-9999");
-    //    JLabel cttEMContent = new JLabel("(99) 99999-9999");
-    //    JLabel nascDateContent = new JLabel("00/00/0000");
-    //    JLabel menContent = new JLabel("R$ " + 100.00);
     JTextField nameField = new JTextField("Nome Completo");
     JTextField cttField = new JTextField("(00)900000000");
     JTextField cttEMField = new JTextField("(00)900000000");
@@ -91,12 +89,9 @@ public class StudentsUpdate {
 
         panel.setLayout(null);
 
-        panel.add(panel);
+        add(panel);
         setTitle("Atualizar informações do aluno");
-        panel.setSize(600, 300);
-    }
-
-    private void setTitle(String atualizarInformaçõesDoAluno) {
+        setSize(600, 300);
     }
 
     private static MaskFormatter createDateFormat() {
