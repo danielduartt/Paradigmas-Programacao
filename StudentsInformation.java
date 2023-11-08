@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -39,8 +37,8 @@ public class StudentsInformation extends JFrame {
 
         cttEMTitle.setBounds(18,125,300,25);
         cttEMTitle.setFont(new Font(null,Font.BOLD,17));
-        cttEMTitle.setBounds(338,125,300,25);
-        cttEMTitle.setFont(new Font(null,Font.PLAIN,17));
+        cttEMContent.setBounds(338,125,300,25);
+        cttEMContent.setFont(new Font(null,Font.PLAIN,17));
 
         nascDateTitle.setBounds(18,155,300,25);
         nascDateTitle.setFont(new Font(null,Font.BOLD,17));

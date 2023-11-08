@@ -84,9 +84,7 @@ public class StudentsUpdate extends JFrame{
         panel.add(cttEMField);
         panel.add(nascDateField);
         panel.add(menField);
-
         panel.add(confirmButtom);
-
         panel.setLayout(null);
 
         add(panel);

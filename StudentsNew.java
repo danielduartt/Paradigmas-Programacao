@@ -16,6 +16,7 @@ public class StudentsNew extends JFrame {
     JLabel label = new JLabel("ADICIONAR NOVO ALUNO");
     JLabel nameTitle = new JLabel("Nome:");
     JLabel cttTitle = new JLabel("Telefone:");
+    JLabel cttEMTitle = new JLabel("Contato de emergência:");
     JLabel nascDateTitle = new JLabel("Data de nascimento:");
     JLabel menTitle = new JLabel("Mensalidade:");
 
@@ -45,11 +46,12 @@ public class StudentsNew extends JFrame {
         cttField.setDocument(new JTextFieldLimit(13));
         cttField.setText("(00)900000000");
 
-        cttEMField.setBounds(318,95,200,25);
+        cttEMTitle.setBounds(18,125,200,25);
+        cttEMTitle.setFont(new Font(null,Font.BOLD,17));
+
+        cttEMField.setBounds(318,125,200,25);
         cttEMField.setDocument(new JTextFieldLimit(13));
         cttEMField.setText("(00)900000000");
-
-
 
         nascDateTitle.setBounds(18,155,300,25);
         nascDateTitle.setFont(new Font(null,Font.BOLD,17));
@@ -74,9 +76,9 @@ public class StudentsNew extends JFrame {
 
         panel.add(nascDateTitle);
         panel.add(menTitle);
-
         panel.add(nameField);
         panel.add(cttField);
+        panel.add(cttEMTitle);
         panel.add(cttEMField);
         panel.add(nascDateField);
         panel.add(menField);
