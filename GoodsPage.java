@@ -51,7 +51,7 @@ public class GoodsPage implements ActionListener {
         deleteGood.setBounds(400, 344 , 300 , 40);
         deleteGood.setFocusable(false);
         deleteGood.addActionListener(this);
-    
+
         comebackButton.setBounds(600,400,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);

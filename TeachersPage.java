@@ -51,7 +51,7 @@ public class TeachersPage implements ActionListener {
         deleteTeacher.setBounds(400, 344 , 300 , 40);
         deleteTeacher.setFocusable(false);
         deleteTeacher.addActionListener(this);
-    
+
         comebackButton.setBounds(600,400,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);

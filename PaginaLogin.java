@@ -27,7 +27,7 @@ public class PaginaLogin implements ActionListener{
     public String errado = "Usuário eu senha incorreto(os).";
 
     HashMap<String , String> loginInfo = new HashMap<String,String>();
-    
+
     public PaginaLogin(HashMap<String , String> loginInfoOriginal){
 
         loginInfo = loginInfoOriginal;
@@ -69,7 +69,7 @@ public class PaginaLogin implements ActionListener{
         frame.setLayout(null);
         frame.setVisible(true);
 
-    }   
+    }
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -80,7 +80,7 @@ public class PaginaLogin implements ActionListener{
         }
 
         if(e.getSource() == loggiButton){
-            
+
             String userId = idField.getText();
             String userPassword = String.valueOf(passwordField.getPassword());
 
@@ -89,7 +89,7 @@ public class PaginaLogin implements ActionListener{
             if(loginInfo.containsKey(userId)){ // Pega o login que esta sendo recebido no dormulario de login e verifica se possui alguma chave com esse valor
                 if (loginInfo.get(userId).equals(userPassword)) { // Se houver uma chave com o valor a cima, verifica se a senha QUE ESTA ATRELADA A ELE é igual a senha enviada pelo formulario de login
                     MeuPopup popup = new MeuPopup(correto);
-                    popup.setVisible(true); 
+                    popup.setVisible(true);
 
                     WelcomePage welcomePage = new WelcomePage();
                     frame.dispose();
@@ -98,14 +98,14 @@ public class PaginaLogin implements ActionListener{
 
                 else{
                     MeuPopup popup = new MeuPopup(errado);
-                    popup.setVisible(true); 
+                    popup.setVisible(true);
                 }
 
             }
 
             else{
                 MeuPopup popup = new MeuPopup(errado);
-                    popup.setVisible(true);         
+                popup.setVisible(true);
             }
 
         }

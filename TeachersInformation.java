@@ -5,19 +5,19 @@ import java.awt.Font;
 
 public class TeachersInformation extends JFrame {
 
-JPanel panel = new JPanel();
-JLabel label = new JLabel("INFORMAÇÕES DO PROFESSOR");
-JLabel nameTitle = new JLabel("Nome:");
-JLabel cttTitle = new JLabel("Telefone:");
-JLabel addrTitle = new JLabel("Endereço:");
-JLabel nascDateTitle = new JLabel("Data de nascimento:");
-JLabel salTitle = new JLabel("Salário:");
+    JPanel panel = new JPanel();
+    JLabel label = new JLabel("INFORMAÇÕES DO PROFESSOR");
+    JLabel nameTitle = new JLabel("Nome:");
+    JLabel cttTitle = new JLabel("Telefone:");
+    JLabel addrTitle = new JLabel("Endereço:");
+    JLabel nascDateTitle = new JLabel("Data de nascimento:");
+    JLabel salTitle = new JLabel("Salário:");
 
-JLabel nameContent = new JLabel("Nome do Professor");
-JLabel cttContent = new JLabel("(99) 99999-9999");
-JLabel addrContent = new JLabel("Rua teste, 3 , Sao Luis, MA");
-JLabel nascDateContent = new JLabel("00/00/0000");
-JLabel salContent = new JLabel("R$ " + 2034.61);
+    JLabel nameContent = new JLabel("Nome do Professor");
+    JLabel cttContent = new JLabel("(99) 99999-9999");
+    JLabel addrContent = new JLabel("Rua teste, 3 , Sao Luis, MA");
+    JLabel nascDateContent = new JLabel("00/00/0000");
+    JLabel salContent = new JLabel("R$ " + 2034.61);
 
     public TeachersInformation() {
 
@@ -48,7 +48,7 @@ JLabel salContent = new JLabel("R$ " + 2034.61);
         salTitle.setFont(new Font(null,Font.BOLD,17));
         salContent.setBounds(338,185,300,25);
         salContent.setFont(new Font(null,Font.PLAIN,17));
-       
+
         panel.add(label);
         panel.add(nameTitle);
         panel.add(nameContent);

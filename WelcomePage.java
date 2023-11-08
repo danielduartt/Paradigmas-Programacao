@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WelcomePage implements ActionListener {
-    
+
     JFrame frame = new JFrame();
     JLabel welcomeTitle = new JLabel("Gerenciador de atividades da Escola JF");
     JLabel welcomeSubtitle = new JLabel("Bem vindo");
@@ -40,7 +40,7 @@ public class WelcomePage implements ActionListener {
 
         goodsButton.setBounds(470, 100 , 130 , 55);
         goodsButton.setFocusable(false);
-        goodsButton.addActionListener(this);        
+        goodsButton.addActionListener(this);
 
         frame.add(teachersButton);
         frame.add(goodsButton);
@@ -56,7 +56,7 @@ public class WelcomePage implements ActionListener {
     }
 
     @Override
-    
+
     public void actionPerformed(ActionEvent e){
 
         if(e.getSource() == teachersButton){
@@ -82,4 +82,4 @@ public class WelcomePage implements ActionListener {
     }
 
 
-} 
+}

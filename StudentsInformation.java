@@ -1,22 +1,29 @@
+import javax.swing.*;
+import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class GoodsInformation extends JFrame  {
+public class StudentsInformation extends JFrame {
+
     JPanel panel = new JPanel();
-    JLabel label = new JLabel("INFORMAÇÕES DO PRODUTO");
+    JLabel label = new JLabel("INFORMAÇÕES DO ALUNO");
     JLabel nameTitle = new JLabel("Nome:");
-    JLabel cttTitle = new JLabel("Valor por unidade:");
-    JLabel nascDateTitle = new JLabel("Recarga de estoque:");
-    JLabel salTitle = new JLabel("Quantidade em estoque:");
+    JLabel cttTitle = new JLabel("Telefone:");
 
-    JLabel nameContent = new JLabel("Nome do produto");
-    JLabel cttContent = new JLabel("R$ " + 120.22);
+    JLabel cttEMTitle = new JLabel("Contato de emergência:");
+    JLabel nascDateTitle = new JLabel("Data de nascimento:");
+    JLabel menTitle = new JLabel("Mensalidade:");
+
+    JLabel nameContent = new JLabel("Nome do Professor");
+    JLabel cttContent = new JLabel("(99) 99999-9999");
+    JLabel cttEMContent = new JLabel("(99) 99999-9999");
     JLabel nascDateContent = new JLabel("00/00/0000");
-    JLabel salContent = new JLabel("5");
+    JLabel menContent = new JLabel("R$ " + 100.00);
 
-    public GoodsInformation(){
+    public StudentsInformation() {
+
         label.setBounds(18,15,400,25);
         label.setFont(new Font(null,Font.BOLD,20));
 
@@ -30,29 +37,39 @@ public class GoodsInformation extends JFrame  {
         cttContent.setBounds(338,95,300,25);
         cttContent.setFont(new Font(null,Font.PLAIN,17));
 
+        cttEMTitle.setBounds(18,125,300,25);
+        cttEMTitle.setFont(new Font(null,Font.BOLD,17));
+        cttEMTitle.setBounds(338,125,300,25);
+        cttEMTitle.setFont(new Font(null,Font.PLAIN,17));
+
         nascDateTitle.setBounds(18,155,300,25);
         nascDateTitle.setFont(new Font(null,Font.BOLD,17));
         nascDateContent.setBounds(338,155,300,25);
         nascDateContent.setFont(new Font(null,Font.PLAIN,17));
 
-        salTitle.setBounds(18,185,300,25);
-        salTitle.setFont(new Font(null,Font.BOLD,17));
-        salContent.setBounds(338,185,300,25);
-        salContent.setFont(new Font(null,Font.PLAIN,17));
+        menTitle.setBounds(18,185,300,25);
+        menTitle.setFont(new Font(null,Font.BOLD,17));
+        menContent.setBounds(338,185,300,25);
+        menContent.setFont(new Font(null,Font.PLAIN,17));
+
 
         panel.add(label);
         panel.add(nameTitle);
         panel.add(nameContent);
         panel.add(cttTitle);
         panel.add(cttContent);
+        panel.add(cttEMTitle);
+        panel.add(menTitle);
         panel.add(nascDateTitle);
         panel.add(nascDateContent);
-        panel.add(salTitle);
-        panel.add(salContent);
+        panel.add(cttEMContent);
+
+        panel.add(menContent);
         panel.setLayout(null);
 
         add(panel);
-        setTitle("Informações do professor");
+        setTitle("Informações dos alunos");
         setSize(600, 260);
+
     }
 }

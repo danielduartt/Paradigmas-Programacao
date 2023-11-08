@@ -10,21 +10,19 @@ import java.text.ParseException;
 import java.awt.Font;
 
 public class GoodsNew  extends JFrame  {
-   
+
     JPanel panel = new JPanel();
 
-    JLabel label = new JLabel("ADICIONAR NOVO PRODUTO");
+    JLabel label = new JLabel("ADICIONAR NOVO PROFESSOR");
     JLabel nameTitle = new JLabel("Nome:");
-    JLabel typeTitle = new JLabel("Tipo de produto:");
-    JLabel valueTitle = new JLabel("Valor por unidade:");
-    JLabel rechargeDateTitle = new JLabel("Última regarga de estoque:");
-    JLabel quantTitle = new JLabel("Quantia em estoque:");
+    JLabel cttTitle = new JLabel("Valor por unidade:");
+    JLabel nascDateTitle = new JLabel("Regarga de estoque:");
+    JLabel salTitle = new JLabel("Quantia em estoque:");
 
     JTextField nameField = new JTextField("Nome do produto");
-    JTextField typeField = new JTextField("Alimento / Uniforme");
-    JTextField valueField = new JTextField("2040");
-    JFormattedTextField rechargeDateField = new JFormattedTextField(createDateFormat());
-    JTextField quantField = new JTextField("0");
+    JTextField cttField = new JTextField("2040");
+    JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
+    JTextField salField = new JTextField("0000.00");
 
     JButton confirmButtom = new JButton("Adicionar produto");
 
@@ -39,46 +37,39 @@ public class GoodsNew  extends JFrame  {
         nameField.setDocument(new JTextFieldLimit(30)); // Definir tamanho da string
         nameField.setText("Nome completo");
 
-        valueTitle.setBounds(18,95,300,25);
-        valueTitle.setFont(new Font(null,Font.BOLD,17));
+        cttTitle.setBounds(18,95,300,25);
+        cttTitle.setFont(new Font(null,Font.BOLD,17));
 
-        valueField.setBounds(318,95,200,25);
-        valueField.setDocument(new JTextFieldLimit(13));
-        valueField.setText("(00)900000000");
+        cttField.setBounds(318,95,200,25);
+        cttField.setDocument(new JTextFieldLimit(13));
+        cttField.setText("(00)900000000");
 
-        typeTitle.setBounds(18,125,300,25);
-        typeTitle.setFont(new Font(null,Font.BOLD,17));
-        typeField.setBounds(318,125,200,25);
-        typeField.setDocument(new JTextFieldLimit(20));
-        typeField.setText("Tipo do produto");
+        nascDateTitle.setBounds(18,155,300,25);
+        nascDateTitle.setFont(new Font(null,Font.BOLD,17));
 
-        rechargeDateTitle.setBounds(18,155,300,25);
-        rechargeDateTitle.setFont(new Font(null,Font.BOLD,17));
+        nascDateField.setBounds(318,155,80,25);
+        nascDateField.setColumns(10);
 
-        rechargeDateField.setBounds(318,155,80,25);
-        rechargeDateField.setColumns(10);
+        salTitle.setBounds(18,185,300,25);
+        salTitle.setFont(new Font(null,Font.BOLD,17));
 
-        quantTitle.setBounds(18,185,300,25);
-        quantTitle.setFont(new Font(null,Font.BOLD,17));
-
-        quantField.setBounds(318,185,100,25);
-        quantField.setDocument(new JTextFieldLimit(10));
-        quantField.setText("0000.00");
+        salField.setBounds(318,185,100,25);
+        salField.setDocument(new JTextFieldLimit(10));
+        salField.setText("0000.00");
 
         confirmButtom.setBounds(370,225,200,25);
         confirmButtom.setFocusable(false);
 
         panel.add(label);
         panel.add(nameTitle);
-        panel.add(valueTitle);
-        panel.add(rechargeDateTitle);
-        panel.add(quantTitle);
-        panel.add(typeTitle);
-        panel.add(typeField);
+        panel.add(cttTitle);
+        panel.add(nascDateTitle);
+        panel.add(salTitle);
+
         panel.add(nameField);
-        panel.add(valueField);
-        panel.add(rechargeDateField);
-        panel.add(quantField);
+        panel.add(cttField);
+        panel.add(nascDateField);
+        panel.add(salField);
 
         panel.add(confirmButtom);
 
@@ -98,5 +89,5 @@ public class GoodsNew  extends JFrame  {
             e.printStackTrace();
         }
         return dateFormatter;
-    } 
+    }
 }
