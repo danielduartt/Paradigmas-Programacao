@@ -53,8 +53,6 @@ public class TeachersPage implements ActionListener {
         deleteTeacher.setBounds(400, 344 , 300 , 40);
         deleteTeacher.setFocusable(false);
         deleteTeacher.addActionListener(this);
-        deleteTeacher.setBackground(new Color(255, 180, 180));
-
     
         comebackButton.setBounds(600,400,100,25);
         comebackButton.setFocusable(false);
@@ -103,6 +101,17 @@ public class TeachersPage implements ActionListener {
             TeachersInformation teachersInformation = new TeachersInformation();
             teachersInformation.setVisible(true);
         }
+
+        if(e.getSource() == teacherUpdate){
+            TeachersUpdate teachersUpdate = new TeachersUpdate();
+            teachersUpdate.setVisible(true);
+        }
+
+        if(e.getSource() == addTeacher){
+            TeachersNew teachersNew = new TeachersNew();
+            teachersNew.setVisible(true);
+        }
+
     }
 
 }

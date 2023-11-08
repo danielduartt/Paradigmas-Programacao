@@ -15,14 +15,12 @@ JLabel cttTitle = new JLabel("Telefone:");
 JLabel addrTitle = new JLabel("Endereço:");
 JLabel nascDateTitle = new JLabel("Data de nascimento:");
 JLabel salTitle = new JLabel("Salário:");
-JLabel classesTitle = new JLabel("Numero de turmas:");
 
 JLabel nameContent = new JLabel("Nome do Professor");
 JLabel cttContent = new JLabel("(99) 99999-9999");
 JLabel addrContent = new JLabel("Rua teste, 3 , Sao Luis, MA");
 JLabel nascDateContent = new JLabel("00/00/0000");
 JLabel salContent = new JLabel("R$ " + 2034.61);
-JLabel classesContent = new JLabel("3");
 
     public TeachersInformation() {
 
@@ -53,12 +51,7 @@ JLabel classesContent = new JLabel("3");
         salTitle.setFont(new Font(null,Font.BOLD,17));
         salContent.setBounds(338,185,300,25);
         salContent.setFont(new Font(null,Font.PLAIN,17));
-
-        classesTitle.setBounds(18,215,300,25);
-        classesTitle.setFont(new Font(null,Font.BOLD,17));
-        classesContent.setBounds(338,215,300,25);
-        classesContent.setFont(new Font(null,Font.PLAIN,17));
-        
+       
         panel.add(label);
         panel.add(nameTitle);
         panel.add(nameContent);
@@ -70,13 +63,11 @@ JLabel classesContent = new JLabel("3");
         panel.add(nascDateContent);
         panel.add(salTitle);
         panel.add(salContent);
-        panel.add(classesTitle);
-        panel.add(classesContent);
         panel.setLayout(null);
 
         add(panel);
         setTitle("Informações do professor");
-        setSize(600, 300);
+        setSize(600, 275);
 
     }
 }
