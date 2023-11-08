@@ -1,6 +1,7 @@
 import java.awt.Font;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,6 +17,8 @@ import javax.swing.BoxLayout;
 
 public class StudentsPage implements ActionListener  {
 
+    String[] students = {"Lucas Martins" , "Teresa Costa" , "Raimundo Plinho"};
+
     //Textos
     JLabel pageTitle = new JLabel("ALUNOS");
     JLabel pageSubtitle = new JLabel("Gerencie todos os alunos da EJF");
@@ -29,9 +32,10 @@ public class StudentsPage implements ActionListener  {
     JButton comebackButton = new JButton("Voltar");
 
     //Estruturas
-    JPanel studentsContainer = new JPanel(); 
-    JScrollPane scrollTeahcerContainer = new JScrollPane(studentsContainer);
     JFrame frame = new JFrame();
+    JPanel studentsContainer = new JPanel(); 
+
+    JComboBox<String> selectStudentsContainer = new JComboBox<>(students);
 
     public StudentsPage(){
 
@@ -52,35 +56,23 @@ public class StudentsPage implements ActionListener  {
         StudentsUpdate.setFocusable(false);
         StudentsUpdate.addActionListener(this);
 
-        addStudent.setBounds(400, 274 , 300 , 40);
+        addStudent.setBounds(20, 205 , 300 , 40);
         addStudent.setFocusable(false);
         addStudent.addActionListener(this);
 
-        deleteStudent.setBounds(400, 344 , 300 , 40);
+        deleteStudent.setBounds(20, 274 , 680 , 40);
         deleteStudent.setFocusable(false);
         deleteStudent.addActionListener(this);
 
-        comebackButton.setBounds(600,400,100,25);
+        comebackButton.setBounds(600,330,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);
 
         studentsContainer.setLayout(new BoxLayout(studentsContainer, BoxLayout.Y_AXIS));
 
-        scrollTeahcerContainer.setBounds(20 , 135 , 310 , 250);
+        selectStudentsContainer.setBounds(20 , 135 , 300 , 35);
 
-        // Painel com todos os alunos --------
-
-        for (int i = 0; i < 20; i++) {
-            JButton student = new JButton("Aluno " + i + ": Marina Luanda");
-            student.setPreferredSize(new Dimension(290, 70));
-            student.setFont(new Font(null , Font.PLAIN , 14));
-            student.setFocusable(false);
-            studentsContainer.add(student);
-        }
-
-        //-----------------------------------------
-
-        frame.add(scrollTeahcerContainer, BorderLayout.CENTER);
+        frame.add(selectStudentsContainer, BorderLayout.CENTER);
         frame.add(comebackButton);
         frame.add(StudentsInformation);
         frame.add(addStudent);
@@ -90,7 +82,7 @@ public class StudentsPage implements ActionListener  {
         frame.add(pageTitle);
         frame.add(pageSubtitle);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(735 , 480);
+        frame.setSize(735 , 410);
         frame.setLayout(null);
         frame.setVisible(true);
 

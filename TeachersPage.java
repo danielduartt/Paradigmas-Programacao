@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,17 +14,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TeachersPage implements ActionListener {
+
+    String[] teachers = {"Natan" , "Robson" , "Raimundo"};
+
     JLabel pageTitle = new JLabel("PROFESSORES");
     JLabel pageSubtitle = new JLabel("Gerencie todos os professores da EJF");
     JLabel selectTitle = new JLabel("Selecione o professor");
+
     JButton teacherInformations = new JButton("Informações do professor");
     JButton teacherUpdate = new JButton("Atualizar informações do professor");
     JButton deleteTeacher = new JButton("Deletar professor");
     JButton addTeacher = new JButton("Adicionar novo professor");
     JButton comebackButton = new JButton("Voltar");
+
     JFrame frame = new JFrame();
     JPanel teachersContainer = new JPanel();
-    JScrollPane scrollTeahcerContainer = new JScrollPane(teachersContainer);
+
+    JComboBox<String> selectTeachersContainer = new JComboBox<>(teachers);
 
     public TeachersPage(){
 
@@ -44,35 +51,23 @@ public class TeachersPage implements ActionListener {
         teacherUpdate.setFocusable(false);
         teacherUpdate.addActionListener(this);
 
-        addTeacher.setBounds(400, 274 , 300 , 40);
+        addTeacher.setBounds(20, 205 , 300 , 40);
         addTeacher.setFocusable(false);
         addTeacher.addActionListener(this);
 
-        deleteTeacher.setBounds(400, 344 , 300 , 40);
+        deleteTeacher.setBounds(20, 274 , 680 , 40);
         deleteTeacher.setFocusable(false);
         deleteTeacher.addActionListener(this);
 
-        comebackButton.setBounds(600,400,100,25);
+        comebackButton.setBounds(600,330,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);
 
         teachersContainer.setLayout(new BoxLayout(teachersContainer, BoxLayout.Y_AXIS));
 
-        scrollTeahcerContainer.setBounds(20 , 135 , 310 , 250);
+        selectTeachersContainer.setBounds(20 , 135 , 300 , 35);
 
-        // Painel com todos os professores --------
-
-        for (int i = 0; i < 20; i++) {
-            JButton teacher = new JButton("Professor " + i + ": Lucas Martins Campos Matos");
-            teacher.setPreferredSize(new Dimension(290, 70));
-            teacher.setFont(new Font(null , Font.PLAIN , 14));
-            teacher.setFocusable(false);
-            teachersContainer.add(teacher);
-        }
-
-        //-----------------------------------------
-
-        frame.add(scrollTeahcerContainer, BorderLayout.CENTER);
+        frame.add(selectTeachersContainer, BorderLayout.CENTER);
         frame.add(comebackButton);
         frame.add(teacherInformations);
         frame.add(addTeacher);
@@ -82,7 +77,7 @@ public class TeachersPage implements ActionListener {
         frame.add(pageTitle);
         frame.add(pageSubtitle);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(735 , 480);
+        frame.setSize(735 , 410);
         frame.setLayout(null);
         frame.setVisible(true);
 
