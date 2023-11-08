@@ -16,15 +16,21 @@ import javax.swing.BoxLayout;
 
 
 public class StudentsPage implements ActionListener  {
+
+    //Textos
     JLabel pageTitle = new JLabel("ALUNOS");
     JLabel pageSubtitle = new JLabel("Gerencie todos os alunos da EJF");
 
+    //Botões 
     JLabel selectTitle = new JLabel("Selecione o aluno");
     JButton StudentsInformation = new JButton("Informações do aluno");
     JButton StudentsUpdate = new JButton("Atualizar informações do aluno");
     JButton deleteStudent = new JButton("Deletar aluno");
     JButton addStudent = new JButton("Adicionar novo aluno");
     JButton comebackButton = new JButton("Voltar");
+    JButton StudentsBuy = new JButton("Compras do aluno"); 
+
+    //Estruturas
     JPanel studentsContainer = new JPanel(); 
     JScrollPane scrollTeahcerContainer = new JScrollPane(studentsContainer);
     JFrame frame = new JFrame();
@@ -56,6 +62,11 @@ public class StudentsPage implements ActionListener  {
         deleteStudent.setFocusable(false);
         deleteStudent.addActionListener(this);
 
+        StudentsBuy.setBounds(400, 65 , 300 , 40);
+        StudentsBuy.setFocusable(false);
+        StudentsBuy.addActionListener(this);
+
+
         comebackButton.setBounds(600,400,100,25);
         comebackButton.setFocusable(false);
         comebackButton.addActionListener(this);
@@ -78,6 +89,7 @@ public class StudentsPage implements ActionListener  {
 
         frame.add(scrollTeahcerContainer, BorderLayout.CENTER);
         frame.add(comebackButton);
+        frame.add(StudentsBuy);
         frame.add(StudentsInformation);
         frame.add(addStudent);
         frame.add(deleteStudent);
@@ -112,6 +124,10 @@ public class StudentsPage implements ActionListener  {
         if(e.getSource() == addStudent){
             StudentsNew studentsNew = new StudentsNew();
             studentsNew.setVisible(true);
+        }
+        
+        if(e.getSource() == StudentsBuy){
+
         }
 
     }
