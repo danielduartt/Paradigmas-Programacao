@@ -1,6 +1,4 @@
-import javax.swing.*;
 import javax.swing.text.MaskFormatter;
-import java.awt.*;
 import java.text.ParseException;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -54,7 +52,6 @@ public class StudentsUpdate extends JFrame{
 
         cttEMField.setBounds(318, 125, 200, 25);
         cttEMField.setDocument(new JTextFieldLimit(30));
-        cttEMField.setText("Rua, N, Bairro");
 
         nascDateTitle.setBounds(18, 155, 300, 25);
         nascDateTitle.setFont(new Font(null, Font.BOLD, 17));

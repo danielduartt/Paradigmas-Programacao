@@ -1,9 +1,12 @@
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Font;
 
-public class StudentsInformation extends JFrame {
+public class StudentsInformation extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel();
     JLabel label = new JLabel("INFORMAÇÕES DO ALUNO");
@@ -19,6 +22,8 @@ public class StudentsInformation extends JFrame {
     JLabel cttEMContent = new JLabel("(99) 99999-9999");
     JLabel nascDateContent = new JLabel("00/00/0000");
     JLabel menContent = new JLabel("R$ " + 100.00);
+
+    JButton classButton = new JButton("Turmas"); 
 
     public StudentsInformation() {
 
@@ -50,6 +55,9 @@ public class StudentsInformation extends JFrame {
         menContent.setBounds(338,185,300,25);
         menContent.setFont(new Font(null,Font.PLAIN,17));
 
+        classButton.setBounds(18,215,150,45);
+        classButton.setFocusable(false);
+        classButton.addActionListener(this);
 
         panel.add(label);
         panel.add(nameTitle);
@@ -61,13 +69,20 @@ public class StudentsInformation extends JFrame {
         panel.add(nascDateTitle);
         panel.add(nascDateContent);
         panel.add(cttEMContent);
+        panel.add(classButton);
 
         panel.add(menContent);
         panel.setLayout(null);
 
         add(panel);
         setTitle("Informações dos alunos");
-        setSize(600, 260);
+        setSize(600, 310);
 
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+    }
+
 }
