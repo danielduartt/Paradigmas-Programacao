@@ -7,14 +7,16 @@ public class GoodsInformation extends JFrame  {
     JPanel panel = new JPanel();
     JLabel label = new JLabel("INFORMAÇÕES DO PRODUTO");
     JLabel nameTitle = new JLabel("Nome:");
-    JLabel cttTitle = new JLabel("Valor por unidade:");
-    JLabel nascDateTitle = new JLabel("Recarga de estoque:");
-    JLabel salTitle = new JLabel("Quantidade em estoque:");
+    JLabel typeTitle = new JLabel("Tipo de produto:");
+    JLabel valueTitle = new JLabel("Valor por unidade:");
+    JLabel rechargeDateTitle = new JLabel("Última recarga de estoque:");
+    JLabel quantTitle = new JLabel("Quantidade em estoque:");
 
     JLabel nameContent = new JLabel("Nome do produto");
-    JLabel cttContent = new JLabel("R$ " + 120.22);
-    JLabel nascDateContent = new JLabel("00/00/0000");
-    JLabel salContent = new JLabel("5");
+    JLabel typeContent = new JLabel("Alimento / Uniforme");
+    JLabel valueContent = new JLabel("R$ " + 120.22);
+    JLabel rechargeDateContent = new JLabel("00/00/0000");
+    JLabel quantContent = new JLabel("5");
 
     public GoodsInformation(){
         label.setBounds(18,15,400,25);
@@ -25,30 +27,37 @@ public class GoodsInformation extends JFrame  {
         nameContent.setBounds(338,65,300,25);
         nameContent.setFont(new Font(null,Font.PLAIN,17));
 
-        cttTitle.setBounds(18,95,300,25);
-        cttTitle.setFont(new Font(null,Font.BOLD,17));
-        cttContent.setBounds(338,95,300,25);
-        cttContent.setFont(new Font(null,Font.PLAIN,17));
+        typeTitle.setBounds(18,125,300,25);
+        typeTitle.setFont(new Font(null,Font.BOLD,17));
+        typeContent.setBounds(338,125,300,25);
+        typeContent.setFont(new Font(null,Font.PLAIN,17));
 
-        nascDateTitle.setBounds(18,155,300,25);
-        nascDateTitle.setFont(new Font(null,Font.BOLD,17));
-        nascDateContent.setBounds(338,155,300,25);
-        nascDateContent.setFont(new Font(null,Font.PLAIN,17));
+        valueTitle.setBounds(18,95,300,25);
+        valueTitle.setFont(new Font(null,Font.BOLD,17));
+        valueContent.setBounds(338,95,300,25);
+        valueContent.setFont(new Font(null,Font.PLAIN,17));
 
-        salTitle.setBounds(18,185,300,25);
-        salTitle.setFont(new Font(null,Font.BOLD,17));
-        salContent.setBounds(338,185,300,25);
-        salContent.setFont(new Font(null,Font.PLAIN,17));
+        rechargeDateTitle.setBounds(18,155,300,25);
+        rechargeDateTitle.setFont(new Font(null,Font.BOLD,17));
+        rechargeDateContent.setBounds(338,155,300,25);
+        rechargeDateContent.setFont(new Font(null,Font.PLAIN,17));
+
+        quantTitle.setBounds(18,185,300,25);
+        quantTitle.setFont(new Font(null,Font.BOLD,17));
+        quantContent.setBounds(338,185,300,25);
+        quantContent.setFont(new Font(null,Font.PLAIN,17));
        
         panel.add(label);
         panel.add(nameTitle);
         panel.add(nameContent);
-        panel.add(cttTitle);
-        panel.add(cttContent);
-        panel.add(nascDateTitle);
-        panel.add(nascDateContent);
-        panel.add(salTitle);
-        panel.add(salContent);
+        panel.add(valueTitle);
+        panel.add(valueContent);
+        panel.add(rechargeDateTitle);
+        panel.add(rechargeDateContent);
+        panel.add(typeTitle);
+        panel.add(typeContent);
+        panel.add(quantTitle);
+        panel.add(quantContent);
         panel.setLayout(null);
 
         add(panel);

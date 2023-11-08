@@ -14,11 +14,13 @@ public class GoodsUpdate extends JFrame {
 
     JLabel label = new JLabel("ATUALIZAR INFORMAÇÕES DO PRODUTO");
     JLabel nameTitle = new JLabel("Nome:");
+    JLabel typeTitle = new JLabel("Tipo de produto:");
     JLabel cttTitle = new JLabel("Valor por unidade:");
     JLabel nascDateTitle = new JLabel("Regarga de estoque:");
     JLabel salTitle = new JLabel("Quantidade em estoque:");
 
     JTextField nameField = new JTextField("Nome do produto");
+    JTextField typeField = new JTextField("Alimento / Uniforme");
     JTextField cttField = new JTextField("(00)900000000");
     JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
     JTextField salField = new JTextField("0000.00");
@@ -43,6 +45,13 @@ public class GoodsUpdate extends JFrame {
         cttField.setDocument(new JTextFieldLimit(13));
         cttField.setText("(00)900000000");
 
+        typeTitle.setBounds(18,125,300,25);
+        typeTitle.setFont(new Font(null,Font.BOLD,17));
+
+        typeField.setBounds(318,125,200,25);
+        typeField.setDocument(new JTextFieldLimit(20));
+        typeField.setText("Tipo do produto");
+
         nascDateTitle.setBounds(18,155,300,25);
         nascDateTitle.setFont(new Font(null,Font.BOLD,17));
 
@@ -64,7 +73,9 @@ public class GoodsUpdate extends JFrame {
         panel.add(cttTitle);
         panel.add(nascDateTitle);
         panel.add(salTitle);
+        panel.add(typeTitle);
 
+        panel.add(typeField);
         panel.add(nameField);
         panel.add(cttField);
         panel.add(nascDateField);
