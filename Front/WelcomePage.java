@@ -1,8 +1,10 @@
-import java.awt.Font;
 
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import Back.Gerenciador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +17,11 @@ public class WelcomePage implements ActionListener {
     JButton teachersButton = new JButton("Professores");
     JButton studentsButton = new JButton("Alunos");
     JButton classesButton = new JButton("Turmas");
+    Gerenciador gerenciador;
 
-    public WelcomePage(){
+    public WelcomePage(Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
 
         welcomeTitle.setBounds(20,20,600,35);
         welcomeTitle.setFont(new Font(null , Font.BOLD, 25));
@@ -54,17 +59,17 @@ public class WelcomePage implements ActionListener {
     public void actionPerformed(ActionEvent e){
 
         if(e.getSource() == teachersButton){
-            TeachersPage teachersPage = new TeachersPage();
+            TeachersPage teachersPage = new TeachersPage(this.gerenciador);
             frame.dispose();
         }
 
         if(e.getSource() == studentsButton){
-            StudentsPage studentsPage = new StudentsPage();
+            StudentsPage studentsPage = new StudentsPage(this.gerenciador);
             frame.dispose();
         }
 
         if(e.getSource() == classesButton){
-            ClassesPage classesPage = new ClassesPage();
+            ClassesPage classesPage = new ClassesPage(this.gerenciador);
             frame.dispose();
         }
 

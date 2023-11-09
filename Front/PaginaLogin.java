@@ -1,10 +1,11 @@
 import java.util.HashMap;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import Back.Gerenciador;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -27,10 +28,12 @@ public class PaginaLogin implements ActionListener{
     public String errado = "Usuário eu senha incorreto(os).";
 
     HashMap<String , String> loginInfo = new HashMap<String,String>();
+    Gerenciador gerenciador;
 
-    public PaginaLogin(HashMap<String , String> loginInfoOriginal){
+    public PaginaLogin(HashMap<String , String> loginInfoOriginal , Gerenciador gerenciador){
 
         loginInfo = loginInfoOriginal;
+        this.gerenciador = gerenciador;
 
         idLabel.setBounds(50,130,75,25);
         passwordLabel.setBounds(50,180,75,25);
@@ -91,7 +94,7 @@ public class PaginaLogin implements ActionListener{
                     MeuPopup popup = new MeuPopup(correto);
                     popup.setVisible(true);
 
-                    WelcomePage welcomePage = new WelcomePage();
+                    WelcomePage welcomePage = new WelcomePage(this.gerenciador);
                     frame.dispose();
 
                 }

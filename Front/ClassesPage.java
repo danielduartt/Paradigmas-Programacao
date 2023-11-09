@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import Back.Gerenciador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,9 +35,11 @@ public class ClassesPage implements ActionListener  {
 
     JComboBox<String> selectClassesContainer = new JComboBox<>(classes);
 
-    
+    Gerenciador gerenciador;
 
-    public ClassesPage(){
+    public ClassesPage(Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
 
         pageTitle.setBounds(20,20,600,35);
         pageTitle.setFont(new Font(null , Font.BOLD, 30));
@@ -88,7 +93,7 @@ public class ClassesPage implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == comebackButton){
-            WelcomePage welcomePage = new WelcomePage();
+            WelcomePage welcomePage = new WelcomePage(this.gerenciador);
             frame.dispose();
         }
 

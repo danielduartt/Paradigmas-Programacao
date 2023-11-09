@@ -1,5 +1,12 @@
+
 import javax.swing.text.MaskFormatter;
+
+import Back.Aluno;
+import Back.Gerenciador;
+import Back.Professor;
+
 import java.text.ParseException;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
@@ -8,8 +15,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class StudentsNew extends JFrame {
+public class StudentsNew extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel();
 
@@ -18,17 +27,20 @@ public class StudentsNew extends JFrame {
     JLabel cttTitle = new JLabel("Telefone:");
     JLabel cttEMTitle = new JLabel("Contato de emergência:");
     JLabel nascDateTitle = new JLabel("Data de nascimento:");
-    JLabel menTitle = new JLabel("Mensalidade:");
 
     JTextField nameField = new JTextField("Nome Completo");
     JTextField cttField = new JTextField("(00)900000000");
     JTextField cttEMField = new JTextField("(00)900000000");
     JFormattedTextField nascDateField = new JFormattedTextField(createDateFormat());
-    JTextField menField = new JTextField("0000.00");
 
     JButton confirmButtom = new JButton("Adicionar aluno");
 
-    public StudentsNew (){
+    Gerenciador gerenciador;
+
+    public StudentsNew (Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
+
         label.setBounds(18,15,600,25);
         label.setFont(new Font(null,Font.BOLD,20));
 
@@ -59,29 +71,20 @@ public class StudentsNew extends JFrame {
         nascDateField.setBounds(318,155,80,25);
         nascDateField.setColumns(10);
 
-        menTitle.setBounds(18,185,300,25);
-        menTitle.setFont(new Font(null,Font.BOLD,17));
-
-        menField.setBounds(318,185,100,25);
-        menField.setDocument(new JTextFieldLimit(10));
-        menField.setText("0000.00");
-
         confirmButtom.setBounds(370,225,200,25);
         confirmButtom.setFocusable(false);
+        confirmButtom.addActionListener(this);
 
         panel.add(label);
+
         panel.add(nameTitle);
         panel.add(cttTitle);
-
-
         panel.add(nascDateTitle);
-        panel.add(menTitle);
         panel.add(nameField);
         panel.add(cttField);
         panel.add(cttEMTitle);
         panel.add(cttEMField);
         panel.add(nascDateField);
-        panel.add(menField);
 
         panel.add(confirmButtom);
 
@@ -101,6 +104,27 @@ public class StudentsNew extends JFrame {
             e.printStackTrace();
         }
         return dateFormatter;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+        if(e.getSource() == confirmButtom){
+
+            String newName = nameField.getText();
+            String newCtt = cttField.getText();
+            String newCttEM = cttEMField.getText();
+            String newNascDate = nascDateField.getText();
+            Random random = new Random();
+            int numeroAleatorio = random.nextInt(1000);
+
+            Aluno aluno = new Aluno(numeroAleatorio, newCttEM, newName, newCtt, newNascDate);
+
+            this.gerenciador.AdicionarAluno(aluno);
+            panel.setVisible(false);
+
+        }
+
     }
 
 }

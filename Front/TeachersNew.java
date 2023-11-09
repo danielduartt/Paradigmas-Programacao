@@ -1,3 +1,4 @@
+
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
@@ -5,11 +6,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
+import java.util.Random;
+
+import Back.Gerenciador;
+import Back.Professor;
+
 import java.text.ParseException;
-
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class TeachersNew extends JFrame  {
+public class TeachersNew extends JFrame implements ActionListener {
 
     JPanel panel = new JPanel();
 
@@ -28,7 +35,12 @@ public class TeachersNew extends JFrame  {
 
     JButton confirmButtom = new JButton("Adicionar professor");
 
-    public TeachersNew(){
+    Gerenciador gerenciador;
+
+    public TeachersNew(Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
+
         label.setBounds(18,15,600,25);
         label.setFont(new Font(null,Font.BOLD,20));
 
@@ -68,6 +80,7 @@ public class TeachersNew extends JFrame  {
 
         confirmButtom.setBounds(370,225,200,25);
         confirmButtom.setFocusable(false);
+        confirmButtom.addActionListener(this);
 
         panel.add(label);
         panel.add(nameTitle);
@@ -100,6 +113,28 @@ public class TeachersNew extends JFrame  {
             e.printStackTrace();
         }
         return dateFormatter;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+        if(e.getSource() == confirmButtom){
+
+            String newName = nameField.getText();
+            String newCtt = cttField.getText();
+            String newAddr = addrField.getText();
+            String newNascDate = nascDateField.getText();
+            Double newSal = Double.parseDouble(salField.getText());
+            Random random = new Random();
+            int numeroAleatorio = random.nextInt(1000);
+
+            Professor professor = new Professor(numeroAleatorio,newAddr,newSal, newName,newCtt ,newNascDate);
+
+            this.gerenciador.AdicionarProfessor(professor);
+            panel.setVisible(false);
+
+        }
+
     }
 
 }

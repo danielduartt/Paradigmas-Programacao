@@ -1,21 +1,19 @@
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Font;
 
+import java.awt.BorderLayout;
+import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
+import Back.Gerenciador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TeachersPage implements ActionListener {
-
-    String[] teachers = {"Natan" , "Robson" , "Raimundo"};
 
     JLabel pageTitle = new JLabel("PROFESSORES");
     JLabel pageSubtitle = new JLabel("Gerencie todos os professores da EJF");
@@ -30,9 +28,22 @@ public class TeachersPage implements ActionListener {
     JFrame frame = new JFrame();
     JPanel teachersContainer = new JPanel();
 
-    JComboBox<String> selectTeachersContainer = new JComboBox<>(teachers);
+    JComboBox<String> selectTeachersContainer;
 
-    public TeachersPage(){
+    Gerenciador gerenciador;
+
+    public TeachersPage(Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
+        
+        String list[] = new String[gerenciador.getProfessoresCadastrados().size()];
+
+        for(int i = 0 ; i<gerenciador.getProfessoresCadastrados().size() ; i++){
+            Integer temp = gerenciador.getProfessoresCadastrados().get(i).getId_professor();
+            list[i] = temp.toString();
+        }
+
+        this.selectTeachersContainer = new JComboBox<>(list);
 
         pageTitle.setBounds(20,20,600,35);
         pageTitle.setFont(new Font(null , Font.BOLD, 30));
@@ -86,22 +97,28 @@ public class TeachersPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == comebackButton){
-            WelcomePage welcomePage = new WelcomePage();
+            WelcomePage welcomePage = new WelcomePage(this.gerenciador);
             frame.dispose();
         }
 
         if(e.getSource() == teacherInformations){
-            TeachersInformation teachersInformation = new TeachersInformation();
+            TeachersInformation teachersInformation = new TeachersInformation(this.gerenciador , this.selectTeachersContainer.getSelectedItem().toString());
             teachersInformation.setVisible(true);
+
         }
 
         if(e.getSource() == teacherUpdate){
-            TeachersUpdate teachersUpdate = new TeachersUpdate();
+            TeachersUpdate teachersUpdate = new TeachersUpdate(this.gerenciador , this.selectTeachersContainer.getSelectedItem().toString());
             teachersUpdate.setVisible(true);
         }
 
+        if(e.getSource() == deleteTeacher){
+            int temp = Integer.parseInt(this.selectTeachersContainer.getSelectedItem().toString());
+            this.gerenciador.RemoverProfessor(temp);
+        }
+
         if(e.getSource() == addTeacher){
-            TeachersNew teachersNew = new TeachersNew();
+            TeachersNew teachersNew = new TeachersNew(this.gerenciador);
             teachersNew.setVisible(true);
         }
 

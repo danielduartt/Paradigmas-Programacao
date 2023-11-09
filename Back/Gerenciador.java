@@ -63,6 +63,7 @@ public class Gerenciador {
     public void AdicionarProfessor(Professor prof){
         this.Professores_Cadastrados.add(prof);
     }
+
     public void RemoverProfessor(int id_professor){
         for (int i = 0; i < Professores_Cadastrados.size(); i++){
             if( id_professor == Professores_Cadastrados.get(i).getId_professor()){
@@ -70,6 +71,7 @@ public class Gerenciador {
             }
         }
     }
+
     public void AlterarDadoProfessor(Professor new_prof){
         for (Professor prof: Professores_Cadastrados){
             if(prof.getId_professor() == new_prof.getId_professor()){
@@ -83,7 +85,6 @@ public class Gerenciador {
             }
         }
     }
-
 
     //Buscar Aluno
     public Aluno BuscarAluno(int matricula){
@@ -102,6 +103,18 @@ public class Gerenciador {
             }
         }
         return null;
+    }
+
+    public ArrayList<Professor> getProfessoresCadastrados(){
+        return this.Professores_Cadastrados;
+    }
+
+    public ArrayList<Aluno> getAlunosCadastrados(){
+        return this.Alunos_Cadastrados;
+    }
+
+    public ArrayList<Turmas> getTurmasCadastradas(){
+        return this.Turmas_Cadastradas;
     }
 
 

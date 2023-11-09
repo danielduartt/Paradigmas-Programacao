@@ -1,3 +1,4 @@
+
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -7,13 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import Back.Gerenciador;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import javax.swing.BoxLayout;
-
 
 public class StudentsPage implements ActionListener  {
 
@@ -35,9 +35,22 @@ public class StudentsPage implements ActionListener  {
     JFrame frame = new JFrame();
     JPanel studentsContainer = new JPanel(); 
 
-    JComboBox<String> selectStudentsContainer = new JComboBox<>(students);
+    JComboBox<String> selectStudentsContainer;
 
-    public StudentsPage(){
+    Gerenciador gerenciador;
+
+    public StudentsPage(Gerenciador gerenciador){
+
+        this.gerenciador = gerenciador;
+        
+        String list[] = new String[gerenciador.getAlunosCadastrados().size()];
+
+        for(int i = 0 ; i<gerenciador.getAlunosCadastrados().size() ; i++){
+            Integer temp = gerenciador.getAlunosCadastrados().get(i).getMatricula();
+            list[i] = temp.toString();
+        }
+
+        this.selectStudentsContainer = new JComboBox<>(list);
 
         pageTitle.setBounds(20,20,600,35);
         pageTitle.setFont(new Font(null , Font.BOLD, 30));
@@ -91,22 +104,27 @@ public class StudentsPage implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == comebackButton){
-            WelcomePage welcomePage = new WelcomePage();
+            WelcomePage welcomePage = new WelcomePage(this.gerenciador);
             frame.dispose();
         }
 
         if(e.getSource() == StudentsInformation){
-            StudentsInformation studentsInformation = new StudentsInformation();
+            StudentsInformation studentsInformation = new StudentsInformation(this.gerenciador , this.selectStudentsContainer.getSelectedItem().toString());
             studentsInformation.setVisible(true);
         }
 
         if(e.getSource() == StudentsUpdate){
-            StudentsUpdate studentsUpdate = new StudentsUpdate();
+            StudentsUpdate studentsUpdate = new StudentsUpdate(this.gerenciador , this.selectStudentsContainer.getSelectedItem().toString());
             studentsUpdate.setVisible(true);
         }
 
+        if(e.getSource() == deleteStudent){
+            int temp = Integer.parseInt(this.selectStudentsContainer.getSelectedItem().toString());
+            this.gerenciador.RemoverAluno(temp);
+        }
+
         if(e.getSource() == addStudent){
-            StudentsNew studentsNew = new StudentsNew();
+            StudentsNew studentsNew = new StudentsNew(this.gerenciador);
             studentsNew.setVisible(true);
         }
 
